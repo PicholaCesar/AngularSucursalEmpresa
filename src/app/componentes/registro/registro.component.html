@@ -1,0 +1,27 @@
+<div class="fondo">
+    <div class="login-box">
+        <h2>Register</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="nombreEmpresa" #nombreEmpresa="ngModel" [(ngModel)]="empresaModel.nombreEmpresa" >
+            <label>Nombre Empresa</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="tipoEmpresa" #tipoEmpresa="ngModel" [(ngModel)]="empresaModel.tipoEmpresa">
+            <label>tipo</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="empresaModel.email">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="empresaModel.password">
+            <label>Password</label>
+          </div>
+          <a  routerLink="/registro" (click)="agregarEmpresa()" >
+ 
+            Register
+          </a>
+        </form>
+      </div>
+</div>

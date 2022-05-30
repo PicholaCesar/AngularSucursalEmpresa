@@ -1,0 +1,88 @@
+<div id="head-pri">
+  <h1>EMPRESAS</h1>
+
+  <!-- Button trigger modal -->
+  <button type="button" id="btnagregar" data-bs-toggle="modal" data-bs-target="#agregarmodal">Agregar Empresa</button>
+
+ 
+ <!-- Modal agregar-->
+ <div class="modal fade" id="agregarmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingresar Empresa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre Empresa</label>
+            <input type="text" class="form-control"  name="nombreEmpresa" #nombreEmpresa="ngModel" [(ngModel)]="EmpresaModelopost.nombreEmpresa">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Tipo de Empresa</label>
+            <input type="text" class="form-control" name="tipoEmpresa" #tipoEmpresa="ngModel" [(ngModel)]="EmpresaModelopost.tipoEmpresa">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">email</label>
+            <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="EmpresaModelopost.email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">password</label>
+            <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="EmpresaModelopost.password"  >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarEmpresa()"  >Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal Actualizar-->
+<div class="modal fade" id="actializarmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Actulizar Empresa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">ACTUALIZAR</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card" *ngFor="let empre of EmpresasModel">
+    <div class="card-header">
+      <img src="../../../assets/images/empresafood.jpg" alt="rover" />
+    </div>
+    <div class="card-body">
+      <h4>{{empre.nombreEmpresa}}</h4>
+
+      <div class ="btncrud">
+        <button id="actu"  data-bs-toggle="modal" data-bs-target="#actializarmodal" >Actializar</button>
+        <button type="button" id="elimi"(click)="delteEmpresa(empre._id)" >Eliminar</button>
+      
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+
